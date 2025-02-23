@@ -1,0 +1,275 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Header (Encabezado) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Banner Principal */
+.banner {
+  position: relative;
+  text-align: center;
+  margin-top: 80px; /* Para evitar que el encabezado cubra el banner */
+}
+
+.motocicleta {
+  width: 100%;
+  height: auto;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.banner h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-agendar {
+  background-color: #f44336;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-agendar:hover {
+  background-color: #d32f2f;
+}
+
+/* Sección de Servicios */
+.servicios {
+  padding: 50px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.servicios h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.servicios .card {
+  display: inline-block;
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.servicios .card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.servicios .card p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Sección Agendar Cita */
+.agendar {
+  padding: 50px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.agendar h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.form-agendar input, .form-agendar textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-agendar button {
+  padding: 15px 30px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-agendar button:hover {
+  background-color: #d32f2f;
+}
+
+/* Sección Sobre Nosotros */
+.sobre-nosotros {
+  padding: 50px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.sobre-nosotros h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.sobre-nosotros p {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Sección Contacto */
+.contacto {
+  padding: 50px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.contacto p {
+  font-size: 18px;
+  color: #333;
+}
+
+.contacto p a {
+  color: #f44336;
+  text-decoration: none;
+}
+
+.contacto p a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+  }
+
+  nav ul {
+      display: block;
+      text-align: center;
+  }
+
+  nav ul li {
+      margin: 10px 0;
+  }
+
+  .banner h1 {
+      font-size: 30px;
+  }
+
+  .banner p {
+      font-size: 18px;
+  }
+
+  .servicios h2 {
+      font-size: 24px;
+  }
+
+  .servicios .card {
+      width: 80%;
+      margin: 10px auto;
+  }
+
+  .agendar h2 {
+      font-size: 24px;
+  }
+
+  .contacto h2 {
+      font-size: 24px;
+  }
+
+  .contacto p {
+      font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo img {
+      width: 120px;
+  }
+
+  .motocicleta {
+      width: 100%;
+  }
+
+  .banner h1 {
+      font-size: 25px;
+  }
+
+  .banner p {
+      font-size: 16px;
+  }
+
+  .form-agendar input, .form-agendar textarea {
+      font-size: 16px;
+  }
+
+  .form-agendar button {
+      font-size: 16px;
+  }
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kike's Motos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header (Encabezado) */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #000;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Banner Principal */
+    .banner {
+      position: relative;
+      text-align: center;
+    }
+
+    .motocicleta {
+      width: 100%;
+      height: auto;
+    }
+
+    .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+    }
+
+    .banner h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .banner p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn-agendar {
+      background-color: #f44336;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .btn-agendar:hover {
+      background-color: #d32f2f;
+    }
+
+    /* Sección de Servicios */
+    .servicios {
+      padding: 50px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .servicios h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .servicios .card {
+      display: inline-block;
+      width: 300px;
+      padding: 20px;
+      margin: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    /* Sección Agendar Cita */
+    .agendar {
+      padding: 50px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .agendar h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .form-agendar input, .form-agendar textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-agendar button {
+      padding: 15px 30px;
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .form-agendar button:hover {
+      background-color: #d32f2f;
+    }
+
+    /* Sección Sobre Nosotros */
+    .sobre-nosotros {
+      padding: 50px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .sobre-nosotros h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    /* Sección Contacto */
+    .contacto {
+      padding: 50px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .contacto h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .contacto p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* Estilos de los iconos de redes sociales */
+    .redes-sociales {
+      margin-top: 20px;
+    }
+
+    .redes-sociales a {
+      margin-right: 20px;
+      font-size: 30px;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .redes-sociales a:hover {
+      color: #f44336;
+    }
+
+    .redes-sociales i {
+      margin-right: 10px;
+    }
+
+    /* Hacer que todo se vea bien en dispositivos móviles */
+    @media screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        padding-left: 0;
+      }
+
+      nav ul li {
+        margin-bottom: 10px;
+      }
+
+      .banner h1 {
+        font-size: 30px;
+      }
+
+      .banner p {
+        font-size: 16px;
+      }
+
+      .banner-content {
+        position: relative;
+        transform: none;
+        top: 0;
+      }
+
+      .servicios .card {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .form-agendar input, .form-agendar textarea {
+        width: 100%;
+      }
+
+      .contacto p {
+        font-size: 16px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header (Encabezado) -->
+  <header>
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Logo Kike's Motos">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#servicios">Nuestros Servicios</a></li>
+        <li><a href="#agendar">Agendar Cita</a></li>
+        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="#contactanos">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner Principal -->
+  <section class="banner">
+    <img src="assets/images/moto.png" alt="Motocicleta Kike's Motos" class="motocicleta">
+    <div class="banner-content">
+      <h1>Bienvenidos a Kike's Motos</h1>
+      <p>Tu taller de confianza para el cuidado de tu moto.</p>
+      <a href="#agendar" class="btn-agendar">Agendar Cita</a>
+    </div>
+  </section>
+
+  <!-- Nuestros Servicios -->
+  <section id="servicios" class="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="card">
+      <h3>Mantenimiento Preventivo</h3>
+      <p>Realizamos mantenimiento preventivo para tu moto, asegurando que siempre esté en óptimas condiciones y funcione de manera segura.</p>
+    </div>
+    <div class="card">
+      <h3>Alistamiento para CDA</h3>
+      <p>Preparamos tu moto para el proceso de revisión técnica y alistamiento para el Certificado de Defensa Automotor (CDA).</p>
+    </div>
+    <div class="card">
+      <h3>Reparaciones Eléctricas</h3>
+      <p>Solucionamos cualquier inconveniente eléctrico que puedas tener con tu moto, desde el sistema de encendido hasta las luces y más.</p>
+    </div>
+  </section>
+
+  <!-- Agendar Cita -->
+  <section id="agendar" class="agendar">
+    <h2>Agendar Cita</h2>
+    <form class="form-agendar">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea placeholder="Descripción de tu moto o problema" required></textarea>
+      <button type="submit">Enviar Cita</button>
+    </form>
+  </section>
+
+  <!-- Sobre Nosotros -->
+  <section id="sobre-nosotros" class="sobre-nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>En Kike's Motos, tenemos más de 10 años de experiencia brindando el mejor servicio en reparación, mantenimiento preventivo, alistamiento para CDA y reparación de problemas eléctricos de motos.</p>
+  </section>
+
+  <!-- Contactanos -->
+  <section id="contactanos" class="contacto">
+    <h2>Contáctanos</h2>
+    <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos.</p>
+    <p>Teléfono: +57 3104817000</p>
+    <p>Email: contacto@kikesmotos.com</p>
+
+    <!-- Redes Sociales -->
+    <div class="redes-sociales">
+      <a href="https://wa.me/+57 3054564124" target="_blank" class="icono-whatsapp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="https://www.facebook.com/kikesmotos" target="_blank" class="icono-facebook">
+        <i class="fab fa-facebook"></i> facebook
+      <a href="https://www.instagram.com/kikesmotos" target="_blank" class="icono-instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>
