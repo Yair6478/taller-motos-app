@@ -1,275 +1,524 @@
-/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f5f5f5;
+  line-height: 1.6;
 }
 
-/* Header (Encabezado) */
-header {
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  max-width: 1200px;
+}
+
+.header-container,
+.footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #000;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
   width: 150px;
-  height: auto;
-}
-
-nav ul {
-  list-style-type: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
   margin-right: 20px;
 }
 
-nav ul li a {
-  color: #fff;
+.logo h1 {
+  font-size: 2em;
+  margin: 0;
+  white-space: nowrap;
+}
+
+nav a {
+  color: white;
   text-decoration: none;
-  font-size: 18px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+nav a:hover {
+  color: #ff6600;
 }
 
-/* Banner Principal */
-.banner {
-  position: relative;
+.hero {
+  background: url('assets/images/moto.png') no-repeat center center/cover;
+  color: white;
+  padding: 100px 0;
   text-align: center;
-  margin-top: 80px; /* Para evitar que el encabezado cubra el banner */
+  position: relative;
 }
 
-.motocicleta {
-  width: 100%;
-  height: auto;
-}
-
-.banner-content {
+.hero::before {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.banner h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
+.hero-container {
+  position: relative;
+  z-index: 1;
 }
 
-.banner p {
-  font-size: 20px;
+.hero h1 {
+  font-size: 2.5em;
   margin-bottom: 20px;
 }
 
-.btn-agendar {
-  background-color: #f44336;
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff6600;
+  color: white;
   padding: 10px 20px;
   text-decoration: none;
-  color: #fff;
   border-radius: 5px;
-  font-size: 18px;
+  margin-top: 10px;
   transition: background-color 0.3s ease;
 }
 
-.btn-agendar:hover {
-  background-color: #d32f2f;
+.btn:hover {
+  background-color: #e05a00;
 }
 
-/* Sección de Servicios */
-.servicios {
-  padding: 50px;
-  background-color: #f4f4f4;
-  text-align: center;
+.btn-primary {
+  background-color: #007bff;
 }
 
-.servicios h2 {
-  font-size: 30px;
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px 0;
+  background-color: #eee;
+}
+
+.service-box {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+.service-box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.service-box h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.service-box p {
+  color: #666;
+}
+
+.btn-details {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-details:hover {
+  background-color: #218838;
+}
+
+.appointment {
+  background-color: #fff;
+  padding: 40px 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointment h2 {
+  color: #333;
   margin-bottom: 20px;
 }
 
-.servicios .card {
-  display: inline-block;
-  width: 300px;
-  padding: 20px;
-  margin: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.form-group {
+  margin-bottom: 20px;
   text-align: left;
 }
 
-.servicios .card h3 {
-  font-size: 24px;
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+  display: block;
+}
+
+.about {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+  margin-top: 50px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.testimonials {
+  background-color: #eee;
+  padding: 50px 0;
+  margin-top: 50px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.testimonial-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item p {
+  color: #666;
   margin-bottom: 10px;
 }
 
-.servicios .card p {
-  font-size: 16px;
-  color: #333;
+.testimonial-author {
+  font-style: italic;
+  color: #888;
+  text-align: right;
 }
 
-/* Sección Agendar Cita */
-.agendar {
-  padding: 50px;
+.gallery {
+  margin-top: 50px;
+  padding: 50px 0;
   background-color: #fff;
+}
+
+.gallery h2 {
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover p {
+  opacity: 1;
+}
+
+#contact {
+  background-color: #f0f0f0;
+  padding: 20px 0;
   text-align: center;
 }
 
-.agendar h2 {
-  font-size: 30px;
+#contact .contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.form-agendar input, .form-agendar textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+#contact .contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.form-agendar button {
-  padding: 15px 30px;
-  background-color: #f44336;
-  color: #fff;
+#contact .contact-item i {
+  margin-right: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+#contact .contact-item p {
+  margin: 0;
+}
+
+#contact .social-icons {
+  margin-bottom: 10px;
+}
+
+#contact .social-icons a {
+  margin: 0 10px;
+  font-size: 30px;
+  color: #333;
+}
+
+#contact p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icon {
+  color: #007bff;
+  margin: 0 10px;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ff6600;
+}
+
+.social-icon.fa-twitter::before {
+  content: "\f16d";
+}
+
+/* Estilos para la ventana de confirmación (Modal) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+#btn-confirmar {
+  background-color: #28a745;
+  color: white;
   border: none;
   border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.form-agendar button:hover {
-  background-color: #d32f2f;
+#btn-confirmar:hover {
+  background-color: #218838;
 }
 
-/* Sección Sobre Nosotros */
-.sobre-nosotros {
-  padding: 50px;
-  background-color: #f4f4f4;
-  text-align: center;
+#btn-cancelar,
+#btn-modificar {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
-.sobre-nosotros h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
+#btn-cancelar:hover,
+#btn-modificar:hover {
+  background-color: #c82333;
 }
 
-.sobre-nosotros p {
-  font-size: 18px;
-  color: #333;
-}
+/* Media query para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .container {
+      width: 95%;
+  }
 
-/* Sección Contacto */
-.contacto {
-  padding: 50px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.contacto h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.contacto p {
-  font-size: 18px;
-  color: #333;
-}
-
-.contacto p a {
-  color: #f44336;
-  text-decoration: none;
-}
-
-.contacto p a:hover {
-  text-decoration: underline;
-}
-
-/* Estilos responsivos */
-@media screen and (max-width: 768px) {
-  header {
+  .header-container,
+  .footer-container {
       flex-direction: column;
       align-items: center;
-      padding: 10px;
   }
 
-  nav ul {
-      display: block;
-      text-align: center;
+  .logo {
+      margin-bottom: 10px;
   }
 
-  nav ul li {
-      margin: 10px 0;
+  nav a {
+      margin: 5px;
   }
 
-  .banner h1 {
-      font-size: 30px;
+  .services {
+      flex-direction: column;
+      align-items: center;
   }
 
-  .banner p {
-      font-size: 18px;
+  .service-box {
+      width: 90%;
+      margin: 10px;
   }
 
-  .servicios h2 {
-      font-size: 24px;
+  .about-content {
+      flex-direction: column;
   }
 
-  .servicios .card {
-      width: 80%;
-      margin: 10px auto;
-  }
-
-  .agendar h2 {
-      font-size: 24px;
-  }
-
-  .contacto h2 {
-      font-size: 24px;
-  }
-
-  .contacto p {
-      font-size: 16px;
+  .about-image {
+      margin-right: 0;
+      margin-bottom: 20px;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .logo img {
-      width: 120px;
-  }
+/* Estilos para el icono de WhatsApp flotante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
 
-  .motocicleta {
-      width: 100%;
-  }
+.whatsapp-float a {
+  display: flex;
+  align-items: center;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
 
-  .banner h1 {
-      font-size: 25px;
-  }
+.whatsapp-float i {
+  margin-right: 10px;
+}
 
-  .banner p {
-      font-size: 16px;
-  }
-
-  .form-agendar input, .form-agendar textarea {
-      font-size: 16px;
-  }
-
-  .form-agendar button {
-      font-size: 16px;
-  }
+/* Estilos para el icono de X (x.jpeg) */
+.x-icon {
+  width: 30px; /* Ajusta el tamaño según sea necesario */
+  height: 30px; /* Ajusta el tamaño según sea necesario */
+  vertical-align: middle; /* Alinea el icono verticalmente */
+  margin: 0 10px;
 }
